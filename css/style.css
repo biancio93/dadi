@@ -1,0 +1,334 @@
+/* ======================================================== STILE GENERALE ========== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --background-page: to bottom, #00C1C1, #08706d;
+    --title-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--title-color);
+}
+
+h2 {
+    font-size: 5em;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/* ======================================================== STILE ========== */
+
+.main-container{
+    background: linear-gradient(var(--background-page));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 60%;
+}
+
+.input-container {
+    width: 100%;
+    text-align: center;
+}
+
+.container-title p {
+    margin-bottom: 4em;
+}
+
+.input-container form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.container-title {
+    text-align: center;
+    color: white;
+}
+
+.button {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    border: 0;
+    box-shadow: 0px 4px 16px #007874;
+    padding: 1.3em;
+    border-radius: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.4s ease-in-out;
+}
+.button-primary{
+    background-color: #FDBB26;
+}
+.button-secondary{
+    background-color: #33CFCE;
+}
+.margin-bottom{
+    margin-bottom:1em;
+}
+
+.input-field {
+    box-shadow: 0px 4px 16px #007874;
+    padding: 1.3em 3em;
+    border-radius: 100px;
+    border: 0;
+    background-color: #33CFCE;
+    color: white;
+    margin-bottom: 1em;
+    transition: 0.4s ease-in-out;
+    font-weight: bold;
+    width: 100%;
+}
+
+.input-field::placeholder {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.field-container {
+    width: 100%;
+    max-height: 70px;
+    overflow: visible;
+    pointer-events: inherit;
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+}
+
+.field-container.hide {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
+}
+
+.input-container.hide {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
+}
+
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+#button-start {
+    cursor: pointer;
+}
+
+[disabled] {
+    opacity: 0.4;
+}
+
+/* ======================================================== STILE ========== */
+#container-players{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.player-container{
+    width: 24%;
+    padding: 4px;
+    border-radius: 17px;
+    margin: 0 0.5% 1em;
+    transition: 0.4s ease;
+    overflow: hidden;
+}
+.player-container .subcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00a8a387;
+    padding: 2em 1em 2em 1em;
+    border-radius: 17px;
+    margin: 0;
+    transition: 0.4s ease;
+}
+.player-name{
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ffffff29;
+    width: 100%;
+    z-index:2;
+}
+.player-image {
+    height: 70px;
+    width: 70px;
+    background-color: #ffc107;
+    box-shadow: 0px 4px 4px #007874;
+    border-radius: 100px;
+    margin-bottom: 1em;
+    position: relative;
+    transition: 0.4s ease;
+    z-index: 2;
+}
+
+.dice-container {
+    height: 100px;
+    width: 100px;
+    background-color: #00837f;
+    border-radius: 17px;
+    transition: 0.4s ease;
+    z-index:2;
+}
+.face-element{
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+}
+.container-game-dashboard, .container-control-dashboard{
+    transform: scaleY(1);
+    opacity: 1;
+    overflow: visible;
+    pointer-events: inherit;
+    transition: 0.4s ease-in-out;
+}
+.container-game-dashboard.hide, .container-control-dashboard.hide{
+    transform: scaleY(0);
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
+}
+.container-game-action {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+.container-game-dashboard:not(.hide){
+    padding-bottom:180px;
+}
+.container-control-dashboard{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, #00c1c100, #08706d);
+    padding: 30px 0;
+}
+
+/* ======================================================== STILE TIRO E VINCITORE ========== */
+
+.score-image{
+    width:100%;
+    height:auto;
+}
+.disable.container-game-action{
+    pointer-events: none;
+    opacity: 0.5;
+}
+.winner-card.player-container .subcontainer{
+    background-color: #ffc107;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+.winner-card.player-container .subcontainer:before{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    top: 0;
+    background-color: #ffe69ca1;
+    transform: rotate(-45deg) translateY(150px);
+    transform-origin: right center;
+    animation: gold-light 2s ease 1s infinite;
+}
+.winner-card.player-container .subcontainer:after{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 20px;
+    top: 100px;
+    background-color: #ffe69ca1;
+    transform: rotate(-45deg) translateY(190px);
+    transform-origin: right center;
+    animation: gold-light 2s ease 1s infinite;
+}
+@keyframes gold-light{
+    0%{
+        transform: rotate(-45deg) translateY(150px); 
+        background-color: #ffe69ca1;
+    }
+    100%{
+        transform: rotate(-45deg) translateY(-350px);
+        background-color: #ffe69c00;
+    }
+}
+
+.winner-card.player-container{
+    background: rgb(234,175,0);
+    position: relative;
+}
+.winner-card.player-container:before{
+    content:'';
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background: rgb(234,175,0);
+    background: linear-gradient(0deg, rgba(234,175,0,1) 0%, rgba(234,175,0,1) 40%, rgba(255,246,220,1) 50%, rgba(234,175,0,1) 60%, rgba(234,175,0,1) 100%);
+    animation: gold-light-border-shine 4s ease 3s infinite;
+    transform: rotate(0) scale(4);
+    transform-origin: center center;
+}
+@keyframes gold-light-border-shine{
+    0%{
+       transform: rotate(0) scale(4);
+    }
+    50%{
+        transform: rotate(180deg) scale(4); 
+    }
+    100%{
+        transform: rotate(359deg) scale(4); 
+    }
+}
+
+.winner-card.player-container .player-image {
+    box-shadow: 0px 4px 4px #c99701;
+}
+
+.winner-card.player-container .dice-container {
+    background-color: #c99701;
+}
